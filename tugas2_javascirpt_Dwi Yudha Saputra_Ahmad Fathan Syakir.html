@@ -19,6 +19,13 @@
       let jabatan = "Manager";
       let gapok = 0;
 
+        //looping pegawai 1 s/d 100
+      for (let no = 1; no <= 100; no++) {
+        if (no > 75 && no <= 100) jabatan = "Staff";
+        else if (no > 50 && no <= 75) jabatan = "Super Visor";
+        else if (no > 25 && no <= 50) jabatan = "Asisten Manager";
+        else jabatan = "Manager";
+      
       //switch case
       switch (jabatan) {
         case "Staff":
@@ -39,12 +46,7 @@
       }
 
 
-      //looping pegawai 1 s/d 100
-      for (let no = 1; no <= 100; no++) {
-        if (no > 75 && no <= 100) jabatan = "Staff";
-        else if (no > 50 && no <= 75) jabatan = "Super Visor";
-        else if (no > 25 && no <= 50) jabatan = "Asisten Manager";
-        else jabatan = "Manager";
+  
 
         //menentukan tunjangan jabatan,tunjangan kesehatan
         let tunjab = gapok * 0.2;
