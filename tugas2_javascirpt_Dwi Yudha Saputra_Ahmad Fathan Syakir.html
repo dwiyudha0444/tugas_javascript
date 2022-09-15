@@ -1,0 +1,89 @@
+<h3 align="center">Daftar Pegawai</h3>
+<table align="center" cellpadding="20" width="40%">
+  <thead>
+    <tr bgcolor="cream">
+      <th>NO</th>
+      <th>NAMA</th>
+      <th>JABATAN</th>
+      <th>AGAMA</th>
+      <th>GAJI POKOK</th>
+      <th>TUNJANGAN JABATAN</th>
+      <th>TUNJANGAN KESEHATAN</th>
+      <th>GAJI KOTOR</th>
+      <th>ZAKAT PROFESI</th>
+      <th>TAKE HOME PAY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <script>
+      let jabatan = "Manager";
+      let gapok = 0;
+
+      //switch case
+      switch (jabatan) {
+        case "Staff":
+          gapok = 4000000;
+          break;
+        case "Super Visor":
+          gapok = 7000000;
+          break;
+        case "Asisten Manager":
+          gapok = 10000000;
+          break;
+        case "Manager":
+          gapok = 15000000;
+          break;
+        default:
+          gapok = 15000000;
+          break;
+      }
+
+      var warna;
+
+      //looping pegawai 1 s/d 100
+      for (let no = 1; no <= 100; no++) {
+        if (no > 75 && no <= 100) jabatan = "Staff";
+        else if (no > 50 && no <= 75) jabatan = "Super Visor";
+        else if (no > 25 && no <= 50) jabatan = "Asisten Manager";
+        else jabatan = "Manager";
+
+        //menentukan tunjangan jabatan,tunjangan kesehatan
+        let tunjab = gapok * 0.2;
+        let tunkes = gapok * 0.1;
+        let gator = gapok + tunjab + tunkes;
+
+        //menetukan agama
+        let agama = "Muslim";
+        no % 2 == 1 ? agama : (agama = "Non Muslim");
+
+        //menentukan warna baris
+        var warna;
+        warna = no % 2 == 0 ? "yellow" : "plum";
+
+        //menentukan zakat
+        let zaprof = 0;
+        if (agama === "Muslim" && gator >= 7000000) zaprof = gator * 0.025;
+        else zaprof = 0;
+
+        //menentukan take home pay
+        let THP = gator - zaprof;
+
+        //mencetak
+        document.write(`
+                          <tr bgcolor=${warna}>
+                              <td>${no}</td>
+                              <td>Pegawai ${no}</td>
+                              <td>${jabatan}</td>
+                              <td>${agama}</td>
+                              <td>Rp. ${gapok}</td>
+                              <td>Rp. ${tunjab}</td>
+                              <td>Rp. ${tunkes}</td>
+                              <td>Rp. ${gator}</td>
+                              <td>Rp. ${zaprof}</td>
+                              <td>Rp. ${THP}</td>
+                          </tr>
+                      `);
+      }
+    </script>
+  </tbody>
+</table>
