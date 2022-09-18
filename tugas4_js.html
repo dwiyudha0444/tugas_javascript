@@ -13,7 +13,7 @@
             Pembelian Barang dengan Konversi Kurs
         </div>
         <div class="card-body">
-            <form id="form">
+            <form id="frm">
                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">Nama Pembeli</label>
                     <div class="col-sm-10">
@@ -65,11 +65,11 @@ Hasilnya ditempatkan pada paragraf yang ber-id-kan isi
 */
 function isiform() {
         isi = document.getElementById("isi");
-        nama = document.getElementById("form").nama.value;
-        barang = document.getElementById("form").barang.value;
-        harga = document.getElementById("form").harga.value;
-        jumlah = document.getElementById("form").jumlah.value;
-        valas = document.getElementById("form").valas.value;
+        nama = document.getElementById("frm").nama.value;
+        barang = document.getElementById("frm").barang.value;
+        harga = document.getElementById("frm").harga.value;
+        jumlah = document.getElementById("frm").jumlah.value;
+        valas = document.getElementById("frm").valas.value;
 
         return {
           isi,
