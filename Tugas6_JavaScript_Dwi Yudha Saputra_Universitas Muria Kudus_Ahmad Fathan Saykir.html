@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container">
+      <!--header-->
+      <div class="text-center">
+        <div class="card-body mt-5">
+          <h5 class="card-title">Daftar Gempa di Indonesia</h5>
+          <p class="card-text">Daftar-daftar kota yang berpontenis terkena gempa di indonesia</p>
+        </div>
+      </div>
+      <!--table-->
+      <table class="table text-center mt-5 table-striped table-hover">
+        <thead>
+          <tr class="bg-primary text-light">
+            <th scope="col">No</th>
+            <th scope="col">Lokasi</th>
+            <th scope="col">Skala</th>
+            <th scope="col">Dampak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            class gempa {
+              constructor(no, lokasi, skala) {
+                this.no = no;
+                this.lokasi = lokasi;
+                this.skala = skala;
+              }
+
+              //   getGempa() {
+              //   this.ket = this.skala >= 6 ? "Lulus" : "Gagal";
+              //   return this.ket;
+              //}
+
+              getSkala() {
+                if (this.skala > 4 && this.skala <= 6) this.skala = "tidak terasa";
+                else if (this.skala > 2 && this.skala <= 4) this.skala = "bangunan retak2";
+                else if (this.skala > 0 && this.skala <= 2) this.skala = "bangunan roboh";
+                else if (this.skala > 6) this.skala = "bangunan roboh dan berpotensi tsunami";
+                else this.skala = "";
+                return this.skala;
+              }
+
+              //   getPredikat() {
+              //   switch (this.skala) {
+              //   case "A":
+              //   this.predikat = "Memuaskan";
+              //   break;
+              // case "B":
+              //   this.predikat = "Bagus";
+              //   break;
+              //        case "C":
+              //        this.predikat = "Cukup";
+              //      break;
+              //  case "D":
+              //  this.predikat = "Kurang";
+              //         break;
+              //     case "E":
+              //     this.predikat = "Buruk";
+              //   break;
+              // default:
+              //         this.predikat = "";
+              //   }
+
+              //   return this.predikat;
+              //}
+
+              mencetak() {
+                document.write(`<tr>
+                                        <td align="center">${this.no}</td>
+                                        <td align="center">${this.lokasi}</td>
+                                        <td align="center">${this.skala}</td>
+                                        <td align="center">${this.getSkala()}</td>
+                                    </tr>
+                                    `);
+              }
+            }
+
+            //-------membuat object-----
+            g1 = new gempa("1", "Kudus", 1);
+            g2 = new gempa("2", "Jepara", 2.4);
+            g3 = new gempa("3", "Semarang", 3.3);
+            g4 = new gempa("4", "Jogja", 7.5);
+            g5 = new gempa("5", "Jakarta", 5.2);
+            g6 = new gempa("6", "Depok", 6.1);
+            g7 = new gempa("7", "Salatiga", 2.2);
+            g8 = new gempa("8", "Solo", 5.5);
+            g9 = new gempa("9", "Blora", 3.3);
+            g10 = new gempa("10", "Medan", 9.1);
+
+            g1.mencetak();
+            g2.mencetak();
+            g3.mencetak();
+            g4.mencetak();
+            g5.mencetak();
+            g6.mencetak();
+            g7.mencetak();
+            g8.mencetak();
+            g9.mencetak();
+            g10.mencetak();
+          </script>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
